@@ -1,4 +1,3 @@
-# HomeLab
 # Homelab Setup and Configuration  
 
 ## Objective  
