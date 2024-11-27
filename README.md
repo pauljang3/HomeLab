@@ -40,8 +40,10 @@ I started by creating a VM in VirtualBox for the Domain Controller:
 
 To optimize the VM, I also installed **Guest Additions**.
 
+
 ### 2. Configuring the Internal Network
 For internal communication between the VMs, I assigned a static IP address to the internal network adapter on the Domain Controller.
+
 
 ### 3. Installing Active Directory Domain Services (ADDS)
 I set up the Domain Controller as follows:
@@ -51,10 +53,12 @@ I set up the Domain Controller as follows:
   - **Username**: `********`  
   - **Group Membership**: Domain Admins
 
+
 ### 4. Setting Up Remote Access (RAS/NAT)
 To enable internet access for the internal network:
 - Opened **Routing and Remote Access** in the server tools
 - Configured NAT to share internet access via the external adapter
+
 
 ### 5. Configuring DHCP
 I installed and configured DHCP to automatically assign IP addresses to client machines:
@@ -72,14 +76,16 @@ I wrote a script to generate 1,000 user accounts. Here's how I set it up:
   2. Navigated to the folder containing the script and the names file.  
   3. Ran the script to generate user accounts.  
 
-### 8. Creating a Client Machine
+
+### 7. Creating a Client Machine
 I set up a second VM for the client machine:
 - Created `CLIENT1` using a Windows 10 Pro ISO.  
 - **Network Configuration**: Set the network adapter to the internal network.  
 - Renamed the PC to `CLIENT1`.  
 - Joined the domain: `mydomain.com`.  
 
-### 9. Testing the Setup 
+
+### 8. Testing the Setup 
 Finally, I verified the setup by logging into CLIENT1 with various domain user accounts to ensure everything was working as expected.
 
 ---
