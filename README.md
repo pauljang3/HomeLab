@@ -41,7 +41,7 @@ To build a virtualized Active Directory environment using Oracle VM VirtualBox f
 - Promoted the server to a domain controller.  
 - Created a new forest and named the root domain (e.g., `mydomain.com`).  
 - Created an administrative account:  
-  - **Username**: `a-pjang`  
+  - **Username**: `********`  
   - **Group Membership**: Domain Admins  
 
 ### 4. Install and Configure Remote Access (RAS/NAT)  
