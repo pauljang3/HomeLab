@@ -1,64 +1,70 @@
 # Homelab Setup and Configuration  
 
 ## Objective  
-To build a virtualized Active Directory environment using Oracle VM VirtualBox for experimenting with domain management, networking, and automation.
+I set up a virtualized Active Directory environment using Oracle VM VirtualBox. The goal was to create a space where I could learn and experiment with domain management, networking, and automating administrative tasks.
+
+
 
 ---
 
 ## Hardware Components  
-- **Host Machine**: Spare PC with Intel i5, 16GB RAM, 500GB SSD  
+For this project, I used a spare PC with the following specs:
+
+- Processor: Intel i5
+- Memory: 16GB RAM
+- Storage: 500GB SSD
 
 ---
 
 ## Software Components  
-- **Virtualization Software**: Oracle VM VirtualBox  
-- **Operating System for DC**: Windows Server 2019  
-- **Operating System for Client**: Windows 10 Pro  
+- Virtualization Tool: Oracle VM VirtualBox
+- Domain Controller OS: Windows Server 2019
+- Client Machine OS: Windows 10 Pro
 
 ---
 
 ## Configuration Steps  
 
-### 1. Create a Virtual Machine for the Domain Controller (DC)  
-- **Resources Allocated**:  
-  - 4 GB RAM  
-  - 4 CPUs  
-
-- **Network Adapters**:  
-  1. Adapter 1: For Internet access  
-  2. Adapter 2: For the VirtualBox internal network  
-
-- **Additional Configuration**:  
-  - Installed **Guest Additions**.  
-  - Renamed network cards for clarity:  
-    - Internet-facing adapter  
+### 1. Setting Up the Domain Controller (DC) VM
+I started by creating a VM in VirtualBox for the Domain Controller:
+- **Allocated Resources**:  
+  - 4 GB of RAM  
+  - 4 CPU cores  
+- **Network Setup**:  
+  - Added two network adapters:  
+    1. One for internet access  
+    2. Another for internal communication between VMs  
+  - Renamed the network adapters for clarity:  
+    - Internet adapter  
     - Internal network adapter  
 
-### 2. Set Up Static IP for Internal Network  
-- Configured a static IP for the internal network interface on the DC.  
+To optimize the VM, I also installed **Guest Additions**.
 
-### 3. Install and Configure Active Directory Domain Services (ADDS)  
-- Promoted the server to a domain controller.  
-- Created a new forest and named the root domain (e.g., `mydomain.com`).  
-- Created an administrative account:  
+### 2. Configuring the Internal Network
+For internal communication between the VMs, I assigned a static IP address to the internal network adapter on the Domain Controller.
+
+### 3. Installing Active Directory Domain Services (ADDS)
+I set up the Domain Controller as follows:
+- Promoted the server to a domain controller
+- Created a new forest with the root domain name `mydomain.com`
+- Added a dedicated admin account:  
   - **Username**: `********`  
-  - **Group Membership**: Domain Admins  
+  - **Group Membership**: Domain Admins
 
-### 4. Install and Configure Remote Access (RAS/NAT)  
-- Opened **Routing and Remote Access** under **Tools**.  
-- Configured NAT to allow internet access through one external IP.  
+### 4. Setting Up Remote Access (RAS/NAT)
+To enable internet access for the internal network:
+- Opened **Routing and Remote Access** in the server tools
+- Configured NAT to share internet access via the external adapter
 
-### 5. Set Up DHCP  
-- Configured DHCP to assign IP addresses automatically to client machines:  
-  - Created a new IPv4 scope.  
-  - Authorized the DHCP server: `dc.mydomain.com`.  
-  - Refreshed IPv4 settings.  
+### 5. Configuring DHCP
+I installed and configured DHCP to automatically assign IP addresses to client machines:
+- Created a new IPv4 scope
+- Authorized the DHCP server using the domain name `dc.mydomain.com`
+- Refreshed the IPv4 configuration to ensure it was active
 
-### 6. Adjust Local Server Settings  
-- Disabled **Internet Explorer Enhanced Security** for easier management.  
 
-### 7. Automate User Account Creation  
-- Created a script to generate 1,000 user accounts:  
+### 6. Automate User Account Creation  
+I wrote a script to generate 1,000 user accounts. Here's how I set it up:
   1. Set the execution policy to unrestricted:  
      ```powershell
      Set-ExecutionPolicy Unrestricted
@@ -66,16 +72,17 @@ To build a virtualized Active Directory environment using Oracle VM VirtualBox f
   2. Navigated to the folder containing the script and the names file.  
   3. Ran the script to generate user accounts.  
 
-### 8. Set Up a Client Machine  
+### 8. Creating a Client Machine
+I set up a second VM for the client machine:
 - Created `CLIENT1` using a Windows 10 Pro ISO.  
 - **Network Configuration**: Set the network adapter to the internal network.  
 - Renamed the PC to `CLIENT1`.  
 - Joined the domain: `mydomain.com`.  
 
-### 9. Verify Client-Server Integration  
-- Verified that all domain users could log in to `CLIENT1`.  
+### 9. Testing the Setup 
+Finally, I verified the setup by logging into CLIENT1 with various domain user accounts to ensure everything was working as expected.
 
 ---
 
 ## Outcome  
-Successfully configured a homelab environment with a functional domain controller, DHCP, NAT, and automated user account creation. This setup provides a platform for future testing and learning that I can continue to build on.
+The homelab is now fully operational, featuring a Domain Controller, DHCP, NAT, and automated user account management. This project has provided me with a solid foundation for experimenting with networking and domain administration, and I’m excited to keep building on it.
