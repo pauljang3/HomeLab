@@ -37,8 +37,6 @@ To build a virtualized Active Directory environment using Oracle VM VirtualBox f
 ### 2. Set Up Static IP for Internal Network  
 - Configured a static IP for the internal network interface on the DC.  
 
----
-
 ### 3. Install and Configure Active Directory Domain Services (ADDS)  
 - Promoted the server to a domain controller.  
 - Created a new forest and named the root domain (e.g., `mydomain.com`).  
@@ -46,13 +44,9 @@ To build a virtualized Active Directory environment using Oracle VM VirtualBox f
   - **Username**: `a-pjang`  
   - **Group Membership**: Domain Admins  
 
----
-
 ### 4. Install and Configure Remote Access (RAS/NAT)  
 - Opened **Routing and Remote Access** under **Tools**.  
 - Configured NAT to allow internet access through one external IP.  
-
----
 
 ### 5. Set Up DHCP  
 - Configured DHCP to assign IP addresses automatically to client machines:  
@@ -60,12 +54,8 @@ To build a virtualized Active Directory environment using Oracle VM VirtualBox f
   - Authorized the DHCP server: `dc.mydomain.com`.  
   - Refreshed IPv4 settings.  
 
----
-
 ### 6. Adjust Local Server Settings  
 - Disabled **Internet Explorer Enhanced Security** for easier management.  
-
----
 
 ### 7. Automate User Account Creation  
 - Created a script to generate 1,000 user accounts:  
@@ -75,8 +65,6 @@ To build a virtualized Active Directory environment using Oracle VM VirtualBox f
      ```  
   2. Navigated to the folder containing the script and the names file.  
   3. Ran the script to generate user accounts.  
-
----
 
 ### 8. Set Up a Client Machine  
 - Created `CLIENT1` using a Windows 10 Pro ISO.  
