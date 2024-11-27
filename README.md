@@ -78,4 +78,4 @@ To build a virtualized Active Directory environment using Oracle VM VirtualBox f
 ---
 
 ## Outcome  
-Successfully configured a homelab environment with a functional domain controller, DHCP, NAT, and automated user account creation. This setup provides a platform for testing and learning about Active Directory, networking, and administrative automation.
+Successfully configured a homelab environment with a functional domain controller, DHCP, NAT, and automated user account creation. This setup provides a platform for future testing and learning that I can continue to build on.
