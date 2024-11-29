@@ -8,11 +8,11 @@ I set up a virtualized Active Directory environment using Oracle VM VirtualBox. 
 ---
 
 ## Hardware Components  
-For this project, I used a spare PC with the following specs:
+For this project, I used my home PC with the following specs:
 
-- Processor: Intel i5
+- Processor: Intel i7
 - Memory: 16GB RAM
-- Storage: 500GB SSD
+- Storage: 1TB SSD
 
 ---
 
