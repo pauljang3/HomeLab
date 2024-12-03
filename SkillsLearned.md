@@ -32,6 +32,8 @@ Using tools like `ping` and `ipconfig` made troubleshooting feel intuitive. It w
 PowerShell became one of my favorite tools during this project:  
 - I wrote scripts to automate the creation of over 1,000 user accounts, saving hours of manual effort.  
 - I also used it to test network configurations and ensure that everything was working as expected.
+  
+![psdc](https://github.com/user-attachments/assets/5f3e76b4-44d8-4f8a-b38b-07fe788d8c25)
 
 Learning how to script was a turning point for me. It taught me how I can use automation to streamline repetitive tasks, which is incredibly satisfying.
 
@@ -42,7 +44,9 @@ Learning how to script was a turning point for me. It taught me how I can use au
 This project gave me a lot of practical troubleshooting experience. Here are a few examples:  
 - I ran into an issue where my client machine wasn’t able to connect to the internet, even though the Domain Controller was set as the default gateway. Upon investigating, I found that the DNS settings on the Domain Controller were incorrect due to a typo in the IP address. After correcting the DNS IP address on the DC, the client machine was able to connect to the internet successfully.
 - While setting up the DHCP server, I initially had issues with IP address assignments on the client machine. After checking the DHCP scope and authorization, I realized the DHCP server wasn’t properly authorized in Active Directory. Once I authorized it and refreshed the IPv4 settings, the client machine was able to obtain an IP address automatically, resolving the issue.
-  
+
+![dhcccc](https://github.com/user-attachments/assets/ed99eca0-feb3-4125-b03e-09023d7648d7)
+
 Each challenge felt like solving a puzzle, and I gained confidence with every fix.
 
 ---
