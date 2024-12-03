@@ -49,7 +49,7 @@ To set up Active Directory, I followed these steps:
 - Opened Server Manager and selected Add Roles and Features.
 - Chose the Active Directory Domain Services role and completed the installation.
 - Promoted the server to a domain controller
-- Created a new forest with the root domain name `paul-jang.com`
+- Created a new forest with the root domain name `mydomain.com`
 
 ![ADDC](https://github.com/user-attachments/assets/eb34552b-19be-4cb1-bb71-03c520da339a)
 - Created a New OU (Organizational Unit) called "_ADMINS" to store my admin account 
@@ -72,7 +72,7 @@ To enable internet access for the internal network:
 ### 5. Configuring DHCP
 I installed and configured DHCP to automatically assign IP addresses to client machines:
 - Created a new IPv4 scope
-- Authorized the DHCP server using the domain name `dc.paul-jang.com`
+- Authorized the DHCP server using the domain name `mydomain.com`
 - Refreshed the IPv4 configuration to ensure it was active
   
 ![dhcpdc](https://github.com/user-attachments/assets/f29f1a79-81a7-4e25-8edc-9bf418d1f65d)
