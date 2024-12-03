@@ -23,7 +23,7 @@ Welcome to my Home Lab project repository! This repository showcases my journey 
 | File/Directory          | Description                                                                 |
 |--------------------------|-----------------------------------------------------------------------------|
 | `README.md`             | High-level overview and introduction (this file).                          |
-| `SetupConfiguration.md` | Step-by-step guide for setting up the homelab environment.                 |
+| [`SetupConfiguration.md`](https://github.com/pauljang3/HomeLab/blob/main/SetUpConfiguration.md) | Step-by-step guide for setting up the homelab environment.                 |
 | `SkillsLearned.md`      | Highlights of the key skills gained and their relevance to IT roles.       |
 | `/Scripts/`             | PowerShell and other scripts used in the project.                         |
 
