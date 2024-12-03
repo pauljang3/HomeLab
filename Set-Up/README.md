@@ -36,11 +36,12 @@ To optimize the VM, I also installed **Guest Additions**.
 
 
 ### 2. Configuring the Internal Network
-For internal communication between the VMs, I assigned a static IP address to the internal network adapter on the Domain Controller.
+For internal communication between the VMs, I assigned a static IP address of 192.168.0.1 from the private address range to the internal network adapter on the Domain Controller.
   - Renamed the network adapters for clarity:  
     - Internet adapter  
     - Internal network adapter
       
+I set the loopback address 127.0.0.1 as the Preferred DNS Server on the Domain Controller. This configuration ensures that the Domain Controller handles DNS resolution for the internal network, streamlining name resolution and enabling domain-related functionality.
 ![dcnetwork](https://github.com/user-attachments/assets/555b3f05-d04a-4bdd-8f43-9b2631641b1d)
 
 
@@ -50,16 +51,15 @@ To set up Active Directory, I followed these steps:
 - Chose the Active Directory Domain Services role and completed the installation.
 - Promoted the server to a domain controller
 - Created a new forest with the root domain name `mydomain.com`
+  
+![domaindc](https://github.com/user-attachments/assets/521f1bed-a274-4e70-a0a4-d77c24aa6d32)
 
-![ADDC](https://github.com/user-attachments/assets/eb34552b-19be-4cb1-bb71-03c520da339a)
 - Created a New OU (Organizational Unit) called "_ADMINS" to store my admin account 
 - Added a dedicated admin account:  
   - **Username**: `********`  
   - **Group Membership**: Domain_Admins
     
-
-
-![a-pjangdc](https://github.com/user-attachments/assets/70856924-ec3e-48b4-b899-f624dec6e6ce)
+![aj](https://github.com/user-attachments/assets/23a4429e-8c51-434f-8c29-311b07c1cf48)
 
 
 ### 4. Setting Up Remote Access (RAS/NAT)
@@ -75,7 +75,8 @@ I installed and configured DHCP to automatically assign IP addresses to client m
 - Authorized the DHCP server using the domain name `mydomain.com`
 - Refreshed the IPv4 configuration to ensure it was active
   
-![dhcpdc](https://github.com/user-attachments/assets/f29f1a79-81a7-4e25-8edc-9bf418d1f65d)
+![dhcpdc](https://github.com/user-attachments/assets/f17a94c2-8c52-47db-9ac7-586eea4005d7)
+
 
 
 ### 6. Automate User Account Creation  
