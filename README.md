@@ -101,11 +101,16 @@ I set up a second VM for the client machine:
 - Created `CLIENT1` using a Windows 10 Pro ISO.  
 - **Network Configuration**: Set the network adapter to the internal network.  
 - Renamed the PC to `CLIENT1`.  
-- Joined the domain: `mydomain.com`.  
+- Joined the domain: `mydomain.com`.
+  
+![domain](https://github.com/user-attachments/assets/73b218d3-d0a6-46e2-b321-0e404c476be2)
 
 
 ### 8. Testing the Setup 
 Finally, I verified the setup by logging into CLIENT1 with various domain user accounts to ensure everything was working as expected.
+I am able to connect to the internet on the client machine using NAT and the Domain Controller acting as the default gateway.
+
+![yoyu](https://github.com/user-attachments/assets/dbc1fd88-4803-425c-a6d5-84469d65b037)
 
 ---
 
