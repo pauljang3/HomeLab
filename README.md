@@ -7,7 +7,7 @@ Welcome to my Home Lab project repository! This repository showcases my journey 
 ## Key Features
 
 - **Active Directory Setup**:  
-  Configured a fully functional Domain Controller with Windows Server 2019.  
+  - Configured a fully functional Domain Controller with Windows Server 2019.  
   - Created and managed Organizational Units (OUs), user accounts, and groups.
 
 - **Networking**:  
