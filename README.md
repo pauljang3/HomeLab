@@ -34,7 +34,7 @@ Welcome to my Home Lab project repository! This repository showcases my journey 
 To explore this project:  
 1. Read the **[`SetupConfiguration.md`](https://github.com/pauljang3/HomeLab/blob/main/SetUpConfiguration.md)** file for a detailed breakdown of the setup process.  
 2. Check out **[`SkillsLearned.md`](https://github.com/pauljang3/HomeLab/blob/main/SkillsLearned.md)** to see the skills I developed.  
-3. Review the automation scripts in `[`/Scripts/`](https://github.com/pauljang3/HomeLab/tree/main/Scripts).
+3. Review the automation scripts in **[`/Scripts/`](https://github.com/pauljang3/HomeLab/tree/main/Scripts)**.
 
 ---
 
